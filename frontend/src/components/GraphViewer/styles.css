@@ -1,0 +1,9 @@
+.graph-container {
+  border: "1px solid #000";
+  background-color: "#f5f6fe";
+}
+
+.graph-viewer {
+  width: 100%;
+  height: 500px;
+}
