@@ -30,9 +30,12 @@ export function TrainersConnection() {
   }, []);
 
   return (
-    <GraphViewer 
-      title={'PokeGraph'}
-      graphData={graphData}
-    />
+    <>
+      <h1>PokeGraph: Conexão entre os treinadores e Pokémons</h1>
+    
+      <GraphViewer 
+        graphData={graphData}
+      />
+    </>
   );
 }

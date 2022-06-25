@@ -6,24 +6,18 @@ import graphStyles from './graph-styles';
 import './styles.css';
 
 interface GraphViewerProps {
-  title: string;
   graphData: any;
 }
 
-export function GraphViewer({
-  title,
-  graphData,  
-} : GraphViewerProps) {
+export function GraphViewer({ graphData } : GraphViewerProps) {
   const [layoutName, setLayoutName] = useState('concentric');
 
   useEffect(() => {
     setLayoutName('breadthfirst');
-  }, []);
+  }, [graphData]);
 
   return (
     <div>
-      <h1>{ title }</h1>
-
       <div className="graph-container">
         <CytoscapeComponent
           elements={graphData}
