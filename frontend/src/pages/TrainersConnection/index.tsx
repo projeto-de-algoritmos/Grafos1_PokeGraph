@@ -15,15 +15,14 @@ export function TrainersConnection() {
   useEffect(() => {
     const data = [] as any;
 
-    ps.findAll().forEach(p => {
-      data.push(GraphService.setNode(p.name, p.name, p.image));
-    });
-
     ts.findAll().forEach(t => {
       data.push(GraphService.setNode(t.name, t.name, t.image));
     });
 
     ts.findAllConnections().forEach(c => {
+      const pokemon = ps.findByName(c.pokemon_name);
+      data.push(GraphService.setNode(pokemon.name, pokemon.name, pokemon.image));
+
       data.push(GraphService.setEdge(c.trainer_name, c.pokemon_name));
     });
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CytoscapeComponent from 'react-cytoscapejs';
+import { Link } from 'react-router-dom';
 
 import graphStyles from './graph-styles';
 import './styles.css';
@@ -22,6 +23,7 @@ export function GraphViewer({
   return (
     <div>
       <h1>{ title }</h1>
+
       <div className="graph-container">
         <CytoscapeComponent
           elements={graphData}
@@ -49,6 +51,12 @@ export function GraphViewer({
           }}
           stylesheet={graphStyles}
         />
+      </div>
+
+      <div className="text-center">
+        <Link className="text-center button-goback" to="/pokemons">
+          Voltar
+        </Link>
       </div>
     </div>
   );

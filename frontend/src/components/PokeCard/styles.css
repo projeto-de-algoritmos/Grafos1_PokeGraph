@@ -16,6 +16,10 @@
   margin-bottom: 12px;
 }
 
+.pokemon-image {
+  max-width: 150px;
+}
+
 .pokemon-card button {
   width: 100%;
   height: 28px;

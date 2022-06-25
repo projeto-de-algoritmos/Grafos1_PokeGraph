@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PokeCard } from '../../components/PokeCard';
 import { Pokemon } from '../../models/pokemon.model';
 import { GraphService } from '../../services/graph.service';
@@ -10,6 +10,8 @@ import { TrainerService } from '../../services/trainer.service';
 import './styles.css';
 
 export function Pokemons() {
+  const navigate = useNavigate();
+
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [username, setUsername] = useState('');
 
@@ -52,17 +54,33 @@ export function Pokemons() {
     setPokemons(pokemons.filter(p => p.name !== pokemon.name));
   }
 
+  function sendTo(path: string): void {
+    const index = ts
+      .findAllConnections()
+      .findIndex(c => c.trainer_name === StorageService.getData('username'));
+
+    if (index !== -1) {
+      navigate(path);
+    } else {
+      alert('Todo treinador pokemon deve possuir pelo menos um pokemon, capture ao menos um pokemon e tente novamente.');
+    }
+  }
+
   return (
    
     <div className="background">
       <div id="container">
-        <Link className="button-56" to="/trainers-connections">Grafo de conexões de treinadores com pokemons</Link>
+        <button className="button-56" onClick={() => sendTo('/trainers-connections')}>
+          Grafo de conexões de treinadores com pokemons
+        </button>
         <br />
-        <Link className="button-56" to="/trainer">Veja os seus pokemons</Link>
+        <button className="button-56" onClick={() => sendTo('/trainer')}>
+          Veja os seus pokemons
+        </button>
       </div>
       <h1>Olá { username }</h1>
 
-      <main className="flex flex-wrap">
+      <main className="flex flex-wrap pokemon-container">
         {
           pokemons.map(pokemon => (
             <PokeCard 

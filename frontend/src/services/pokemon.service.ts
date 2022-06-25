@@ -7,6 +7,11 @@ export class PokemonService {
     return pokemons;
   }
 
+  findByName(name: string): Pokemon {
+    const index = pokemons.findIndex(p => p.name === name);
+    return (index !== -1) ? pokemons[index] : {} as Pokemon;
+  }
+
   findAllTypes(): string[] {
     return types;
   }

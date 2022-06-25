@@ -14,6 +14,7 @@ export function PokeCard({ pokemon, capiturar } : PokeCardProps) {
         <img 
           src={pokemon.image} 
           alt={`Imagem do pokemon ${pokemon.name}`} 
+          className="pokemon-image"
         />
         <hr/>
         <h2>{pokemon.name}</h2>
