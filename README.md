@@ -16,8 +16,17 @@ Este projeto tem como objetivo permitir que treinadores pokémons consigam captu
 - O grafo sempre será direcionado, treinador em vários pokémons ou pokémon tem vários treinadores;
 - O grafo não pode ser desconexo;
 
+Projeto disponível em: <a href="https://pokegraph-projeto-algoritmos.netlify.app">https://pokegraph-projeto-algoritmos.netlify.app</a>
+
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+![Tela Inicial](img/Tela01.png)
+
+![Tela Inicial](img/Tela02.png)
+
+![Tela Inicial](img/Tela03.png)
+
+![Tela Inicial](img/Tela04.png)
 
 ## Instalação 
 **Linguagem**: Javascript (Typescript)<br>
@@ -27,6 +36,10 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 - Ter no <a href="https://nodejs.org/en/" target="_blank">NodeJS</a> e o <a href="https://www.npmjs.com/" target="_blank">NPM</a> instalados em sua máquina local (Geralmente basta instalar no NodeJS que o NPM é instalado também);
 
 ### Baixando e executando o projeto
+
+#### Se preferir, acesse o projeto via navegador pelo link:
+
+<a href="https://pokegraph-projeto-algoritmos.netlify.app">https://pokegraph-projeto-algoritmos.netlify.app</a>
 
   ```
     git clone https://github.com/projeto-de-algoritmos/Grafos1_PokeGraph.git
