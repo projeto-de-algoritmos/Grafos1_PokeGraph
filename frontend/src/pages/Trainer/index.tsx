@@ -10,6 +10,7 @@ import './styles.css';
 export function Trainer() {
   const [graphData, setGraphData] = useState<any[]>([]);
   const [username, setUsername] = useState(StorageService.getData('username'));
+  const [layoutName, setLayoutName] = useState<any>('circle');
 
   const ps = new PokemonService();
   const ts = new TrainerService();
@@ -22,6 +23,12 @@ export function Trainer() {
     ts.findAllConnections().forEach(c => {
       gs.addEdge(c.trainer_name, c.pokemon_name);
     });
+
+    if (layoutName === 'circle') {
+      setLayoutName('breadthfirst');
+    } else {
+      setLayoutName('circle');
+    }
   }, [username]);
 
   useEffect(() => {
@@ -75,6 +82,7 @@ export function Trainer() {
       </div>
 
       <GraphViewer
+        layoutName={layoutName}
         graphData={graphData}
       />
     </div>

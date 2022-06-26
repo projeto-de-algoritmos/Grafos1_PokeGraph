@@ -6,15 +6,11 @@ import graphStyles from './graph-styles';
 import './styles.css';
 
 interface GraphViewerProps {
+  layoutName: 'concentric' | 'breadthfirst';
   graphData: any;
 }
 
-export function GraphViewer({ graphData } : GraphViewerProps) {
-  const [layoutName, setLayoutName] = useState('concentric');
-
-  useEffect(() => {
-    setLayoutName('breadthfirst');
-  }, [graphData]);
+export function GraphViewer({ graphData, layoutName } : GraphViewerProps) {
 
   return (
     <div>

@@ -9,6 +9,7 @@ import './styles.css';
 export function TrainersConnection() {
   const [graphData, setGraphData] = useState<any[]>([]);
   const [isBipartite, setBipartite] = useState(false);
+  const [layoutName, setLayoutName] = useState<any>('concentric');
 
   const ps = new PokemonService();
   const ts = new TrainerService();
@@ -32,6 +33,7 @@ export function TrainersConnection() {
 
     setGraphData(data);
     setBipartite(gs.isBipartite(100));
+    setLayoutName('breadthfirst');
   }, []);
 
   return (
@@ -42,6 +44,7 @@ export function TrainersConnection() {
       </h3>
     
       <GraphViewer 
+        layoutName={layoutName}
         graphData={graphData}
       />
     </>
