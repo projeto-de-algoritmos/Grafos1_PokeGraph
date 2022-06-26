@@ -10,7 +10,7 @@ export function Home() {
   const navigate = useNavigate();
 
   function handleInputUsername(event: ChangeEvent<HTMLInputElement>): void {
-    const username = event.target.value;
+    const username = event.target.value.trim();
     setUsername(username);
   }
 
