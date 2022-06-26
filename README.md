@@ -45,6 +45,8 @@ Projeto disponível em: <a href="https://pokegraph-projeto-algoritmos.netlify.ap
     git clone https://github.com/projeto-de-algoritmos/Grafos1_PokeGraph.git
 
     cd Grafos1_PokeGraph
+    
+    cd frontend
 
     npm install
 
