@@ -59,8 +59,7 @@ Projeto disponível em: <a href="https://pokegraph-projeto-algoritmos.netlify.ap
 Na página inicial, informe o seu nome de treinador pokémon e em seguida comece capturando os pokémons e sempre que desejar, visualize o grafo de conexão entre treinadores e pokémons.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
+[Link para apresentação](https://www.youtube.com/watch?v=4qw6Mc2vyKo&ab_channel=LucasLopes)
 
 
 
