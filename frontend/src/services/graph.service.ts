@@ -97,11 +97,54 @@ export class GraphService {
     }
   }
 
-  get graph(): Object {
-    return {
-      vertex: this.vertex,
-      adj: this.adj,
-    };
+  get graph(): Map<string, string[]> {
+    return this.adj;
   }
+
+  public isBipartite(V: number): boolean {
+    const adj = this.adj;
+    let col = new Array(V);
+
+    for(let i = 0; i < V; i++)
+      col[i] = -1;
+
+    let q = [] as any;
+
+    if (!adj.keys().next().value) {
+      return false;
+    }
+      
+    for (let i of adj.keys().next().value) {
+      if (col[i] === -1) {
+        q.push({first: i, second: 0});
+        col[i] = 0;
+              
+        while (q.length !== 0) {
+          let p = q[0];
+          q.shift();
+        
+          let v = p.first;
+          let c = p.second;
+
+          if (adj) {
+            for (let j of adj.get(v) as string[]) {
+              const index = j as any;
+  
+              if (col[index] === c)
+                return false;
+              
+              if (col[index] === -1) {
+                col[index] = (c === 1) ? 0 : 1;
+                q.push({first: j, second: col[index]});
+              }
+            }
+          }
+        }
+      }
+    }
+        
+    return true;
+  } 
+
 
 }

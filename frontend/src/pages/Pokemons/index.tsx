@@ -23,6 +23,8 @@ export function Pokemons() {
     ts.findAllConnections().forEach(c => {
       gs.addEdge(c.trainer_name, c.pokemon_name);
     });
+
+    console.log(gs.isBipartite(100));
   }, []);
 
   useEffect(() => {
