@@ -3,6 +3,8 @@
 **Número da Lista**: undefined<br>
 **Conteúdo da Disciplina**: Grafos 1<br>
 
+[Link para apresentação](https://www.youtube.com/watch?v=4qw6Mc2vyKo&ab_channel=LucasLopes)
+
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
